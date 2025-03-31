@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto com Arduino</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Projeto Arduino</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/sobre">Sobre</a></li>
+                    <li><a href="/vantagens">Vantagens</a></li>
+                    <li><a href="/somos">Quem somos</a></li>
+
+
+                </ul>
+
+
+            </nav>
+        </div>
+    </header>
+
+    <section id="detalhes">
+        <div class="container">
+            <h2>Detalhes do Projeto</h2>
+            <p id="idDe">Transforme Cada Passo em Energia Verde: Uma Ideia Inovadora do Grupo 3DS
+
+                Inspirado por tecnologias já em uso globalmente, o grupo 3DS introduz no Brasil um projeto que
+                transforma o passo das pessoas em eletricidade. Fundamentado em uma solução inédita que converte
+                movimento humano em energia renovável, o projeto visa ajudar a construir um futuro sustentável, criando
+                eletricidade de modo prático e eficiente em áreas de grande movimento.
+
+            </p>
+
+
+            <!-- Espaço para a Imagem ou Modelo 3D -->
+            <div class="imagem-projeto">
+                <p>Modelo ou Imagem 3D do Projeto</p>
+                <!-- Aqui você pode adicionar sua imagem ou modelo 3D -->
+                <img src="sua-imagem-ou-modelo.jpg" alt="Modelo do Projeto">
+                <!-- Se estiver usando Tinkercad, pode embutir um modelo 3D como iframe -->
+                <iframe src="https://www.tinkercad.com/things/1ywx21BIAAD-easter-egg-2025" width="500"
+                    height="400"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Projeto Arduino</p>
+        </div>
+    </footer>
+    <script>
+        // Função para destacar o link da página atual
+        function highlightActiveLink() {
+            const links = document.querySelectorAll('header nav ul li a'); // Pega todos os links no menu
+            const currentPath = window.location.pathname; // Pega o caminho da URL
+
+            // Para cada link, verifica se o caminho do link corresponde ao caminho da página atual
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active'); // Adiciona a classe 'active' ao link que corresponde à página atual
+                } else {
+                    link.classList.remove('active'); // Remove a classe 'active' de outros links
+                }
+            });
+        }
+
+        // Impede o recarregamento quando o usuário clicar no link da página atual
+        document.querySelectorAll('header nav ul li a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                // Verifica se o link aponta para a mesma página
+                if (window.location.pathname === link.getAttribute('href')) {
+                    event.preventDefault(); // Impede a navegação
+                }
+            });
+        });
+
+        // Chama a função logo após o carregamento da página
+        window.addEventListener('DOMContentLoaded', highlightActiveLink);
+    </script>
+
+
+</body>
+
+</html>
